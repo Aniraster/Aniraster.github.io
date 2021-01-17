@@ -1,85 +1,14 @@
-<!Doctype HTML>
-<html><head><title>Ani Guy</title><link rel="stylesheet" type="text/css" href="Styles/default.css"></head><body>
-
-<div class = mainArea>
-	<div class = mainText>
-			<hr>
-			<h1>Ganer</h1>
-			<hr>
-	</div>
-</div>
-<div class="slideholderholder" id="slhh">
-	<div class="slideholder"><img src = "Uncropped Slides/-1" id="image1" class="slides"></div>
-	<div class="slideholder"><img src = "Uncropped Slides/-1" id="image2" class="slides"></div>
-	<div class="slideholder"><img src = "Uncropped Slides/-1" id="image3" class="slides"></div>
-	<div class="slideholder"><img src = "Uncropped Slides/0" id="image4" class="slides"></div>
-</div>
-
-<div id="topbar">
-	<div id="buttonholder">
-		<button class="topButtons">About</button><!--
-		--><button class="topButtons">Programming</button><!--
-		--><button class="topButtons"><a href="videos.html">Videos</a></button><!--
-		--><button class="topButtons">Games</button><!--
-		--><button class="topButtons">Others</button>
-	</div>
-</div>
-</body>
-</html>
-
-<script>
-var im1 = -3, im2 = -2, im3 = -1, im4 = 0;
-var slidesToggle = true;
-var imgnums = 85;
-moveSlidesUp();
-var __moveTheSlides__ = setInterval(moveSlidesUp, 2500);
-
-function moveSlidesUp(){
-	moveslides();
-	setTimeout(function(){
-		document.getElementById("slhh").style.transition = "bottom 0s";
-		document.getElementById("slhh").style.bottom = "-75%"; slideshow();
-		}, 2000)
-}
-
-function moveslides(){
-		document.getElementById("slhh").style.transition = "bottom 2s";
-		document.getElementById("slhh").style.bottom = "-25%";
-}
-
-function slideshow(){
-	im1 = overflowAdd(im1);
-	im2 = overflowAdd(im2);
-	im4 = overflowAdd(im4);
-	im3 = overflowAdd(im3);
-	for (var i = 1; i < 5; i++) {
-		switch (i) {
-			case 1:
-				replaceImage(i, im1);
-				break;
-			case 2:
-				replaceImage(i, im2);
-				break;
-			case 3:
-				replaceImage(i, im3);
-				break;
-			case 4:
-				replaceImage(i, im4);
-				break;
-			default:
-				replaceImage(i, im1);
-		}
-	}
-}
-
-function replaceImage(imnum, index){
-	document.getElementById("image"+imnum.toString()).src = "Uncropped Slides/" + index.toString();
-}
-
-function overflowAdd(inval){
-	inval ++;
-	var outval = inval % imgnums;
-	return outval;
-}
-
-</script>
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="icon" href="goku.png" type="image/png" sizes="16x16"> 
+    </head>
+    <body>
+                                                                    <p> this is sneed </p>
+                                                                                                                            <img src = "sneed.jpeg">
+                                                                    <h1> ALL CREDIT TO CAPTAIN_Xx_Gamester_xX_SlAMS who just wants to clarify he is not a mole-ster</h1>
+        <h2> no copywright <img src = "plane.jpeg" width = "200px"> intende d</h2>
+                    <p> this is not sneed</p>
+                                                                                                                                                                                                                                                                                                    <img src = "goku.jpeg" alt="not sneed">
+                              </body><!-- no i will not add comments -->
+                                  </html>
