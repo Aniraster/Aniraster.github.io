@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<style>
+body {
+  background-color: #010101;
+}
+.saulHolder {
+  display:flex;
+  flex-wrap: wrap;
+  width: 20%;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  grid-template-columns: repeat(5, 1fr);
+}
+.saulHolder > video {
+  margin:auto;
+}
+</style>
+<html>
+<body>
+<div class="saulHolder" id="holder"></div>
+<div onclick="play()" style="height:100%; width:100%;margin:0;position:fixed;top:0%;left:0%;"></div>
+</body>
+</html>
+<script>
+// are you enjoying the spaghetti code?, refill your hard drive, you'll love what comes next...
+counter = 0;
+globalcount = 0;
+active = [];
+function arrayRemove(arr, value) {
+  return arr.filter(function(currval){
+      return currval != value;
+  });
+}
+function play() {
+  //if (counter < 15) { //was gonna make this be capped at 15 for formatting, but go nuts lmao
+    var saul = document.createElement("video");
+    saul.setAttribute("src","saul.mp4");
+    saul.setAttribute("autoplay", "autoplay");
+    saul.setAttribute("id",globalcount.toString());
+    active.push(globalcount);
+    counter += 1;
+    globalcount += 1;
+    document.getElementById("holder").appendChild(saul);
+    formatupdate();
+  //}
+  saul.onended = function() {
+      active = arrayRemove(active, saul.getAttribute("id"));
+      saul.remove();
+      counter -= 1;
+      formatupdate();
+  };
+}
+function formatupdate() {
+  switch (active.length) {
+    case 1:
+      document.getElementById("holder").style.width = "20%";
+      break;
+    case 2: case 4:
+      document.getElementById("holder").style.width = "40%";
+      break;
+    case 3: case 5: case 6:
+      document.getElementById("holder").style.width = "50%";
+      break;
+    case 7: case 8: case 11: case 12:
+      document.getElementById("holder").style.width = "60%";
+      break;
+    case 9: case 10: case 13: case 14: case 15:
+      document.getElementById("holder").style.width = "80%";
+      break;
+    default:
+      document.getElementById("holder").style.width = "80%";
+  }
+  window.scrollTo(0, document.documentElement.scrollHeight);
+}
+</script>
