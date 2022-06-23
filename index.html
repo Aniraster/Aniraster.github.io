@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
-<body>
-<a download="moyai" href="" title="moyai" onclick="play()"><img alt="moyai" src="moyai.png" style="height:100%;margin:0;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);"></a>
+<body  style="background-color: black;">
+<div onclick="play()" style="height:100%; width:100%;margin:0;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);"></div>
 </body>
 </html>
 <script>
 function play() {
-  var audio = new Audio('thud.mp3');
-  audio.play();
+  window.location = "saul.html";
+  var saul = document.createElement("video");
+  saul.setAttribute("src","saul.mp4");
+  saul.setAttribute("autoplay", "autoplay");
+  document.body.appendChild(saul);
+  saul.onended = function() {
+      saul.remove()
+  };
 }
 </script>
